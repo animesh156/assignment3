@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import webpush from "web-push";
 
-const PUBLIC_VAPID_KEY = "BOamQs4uzigQ5TLMa-PtBX0Roiqa0JRR8OHakjZvNU38Iu-6HtXW2ZJIwzZqFMYlWgEs6Th3Z5DBEnE0ggoORNE";
-const PRIVATE_VAPID_KEY = "VNlZ24OTut7qA9bG5t1Y9c8vdqLOidyulldjAVtWiQ4";
+const PUBLIC_VAPID_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY
+const PRIVATE_VAPID_KEY = process.env.PRIVATE_VAPID_KEY
 
 webpush.setVapidDetails(
   "mailto:your-email@example.com",

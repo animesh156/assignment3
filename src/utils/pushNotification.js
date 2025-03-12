@@ -4,7 +4,7 @@ export async function subscribeUser() {
       const registration = await navigator.serviceWorker.ready;
       const subscription = await registration.pushManager.subscribe({
         userVisibleOnly: true,
-        applicationServerKey: "BOamQs4uzigQ5TLMa-PtBX0Roiqa0JRR8OHakjZvNU38Iu-6HtXW2ZJIwzZqFMYlWgEs6Th3Z5DBEnE0ggoORNE",
+        applicationServerKey:  process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY,
       });
 
       console.log("New Push Subscription:", subscription);
